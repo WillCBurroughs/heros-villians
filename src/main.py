@@ -44,9 +44,24 @@ delete_by_Value("Luffy")
 
 create_hero(Luffy)
 
-# Update hero property 
-def updateHero(hero, property, newValue): 
-    
+# Update hero property (Update)
+def updateHero(name, property, newValue):
+    check_query = "SELECT id FROM heroes WHERE name = %s;"
+    result = execute_query(check_query, (name,))
+    possible_properties = ["biography", "name", "about_me"]
+
+
+    if property not in possible_properties:
+        print(f"Hero {name}: does not contain {property} possible properties are (biography, name, about_me)")
+    elif result and property in possible_properties:
+        print(f"Hero exists: {name}")
+        # Build the update query with string concatenation
+        update_query = f"UPDATE heroes SET {property} = %s WHERE name = %s;"
+        execute_modify(update_query, (newValue, name))
+    else:
+        print(f"Hero not found with name: {name}")
+
+updateHero("Chill Woman", "name", "Super Chill Woman")
 
 # Read data 
 def render_all():
