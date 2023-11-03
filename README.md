@@ -9,7 +9,10 @@
 - The basic project now works (Done)
 
 ## Refactor Basic 
-- Go back through and have input statements to make this more user friendly 
-- Handle for more error cases and continue so that this will run whenever user needs functionality 
+- Go back through and have input statements to make this more user friendly (Done)
+- Handle for more error cases and continue so that this will run whenever user needs functionality (Done)
+
+## Make project fun 
+- Try to make rick roll animation in terminal (Done) 
 
 
